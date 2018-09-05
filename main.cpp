@@ -1,16 +1,15 @@
 #include "markovchain.h"
-#include <stdio.h>
+#include <iostream>
 #include <string>
 
 int main() {
-	char filename[257];
+	string filename;
 	printf("Enter a filename to be converted to Markov Chain: ");
-	fgets(filename, 256, stdin);
+	std::cin >> filename;
 
 	MarkovChain* file_chain = new MarkovChain;
 	(*file_chain).generate_from_file(filename);
 
-	printf("\n");
 	(*file_chain).print();
 
 	return 0;
