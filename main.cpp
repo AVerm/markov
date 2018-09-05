@@ -5,7 +5,6 @@
 bool arg_present(int, char* [], string);
 
 int main(int argc, char* argv[]) {
-	char filename[257];
 	MarkovChain* file_chain = new MarkovChain;
 
 	// Handle command line arguments
@@ -25,7 +24,7 @@ Creates a markov chain from a file and prints some text made from it\n\
 	}
 	else {
 		int gen_status;
-		gen_status = (*file_chain).generate_from_file(filename);
+		gen_status = (*file_chain).generate_from_file(argv[argc - 1]);
 		if (gen_status != 0) {
 			printf("Problem generating chain.\nExiting\n");
 			return gen_status;
