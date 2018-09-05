@@ -27,7 +27,7 @@ Creates a markov chain from a file and prints some text made from it\n\
 		int gen_status;
 		gen_status = (*file_chain).generate_from_file(filename);
 		if (gen_status != 0) {
-			printf("Problem generating chain.\nExiting");
+			printf("Problem generating chain.\nExiting\n");
 			return gen_status;
 		}
 	}

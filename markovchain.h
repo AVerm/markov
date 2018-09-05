@@ -25,7 +25,7 @@ class MarkovChain {
 				return 0;
 			}
 			else {
-				printf("Error opening file!");
+				printf("Error opening file!\n");
 				return 1;
 			}
 		}
