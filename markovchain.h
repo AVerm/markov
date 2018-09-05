@@ -9,7 +9,7 @@ class MarkovChain {
 	public:
 		Graph graph;
 
-		void generate_from_file(char filename[]) {
+		int generate_from_file(char filename[]) {
 			std::ifstream infile;
 			infile.open(filename); // Expects a char[]
 			if (infile.is_open()) { // Error avoidance
@@ -22,9 +22,11 @@ class MarkovChain {
 					previous_word = word;
 				}
 				infile.close(); // Close the file to avoid memory leak
+				return 0;
 			}
 			else {
 				printf("Error opening file!");
+				return 1;
 			}
 		}
 

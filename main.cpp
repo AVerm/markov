@@ -24,7 +24,12 @@ Creates a markov chain from a file and prints some text made from it\n\
 		return 0;
 	}
 	else {
-		(*file_chain).generate_from_file(filename);
+		int gen_status;
+		gen_status = (*file_chain).generate_from_file(filename);
+		if (gen_status != 0) {
+			printf("Problem generating chain.\nExiting");
+			return gen_status;
+		}
 	}
 
 	if (arg_present(argc, argv, "-d") || arg_present(argc, argv, "--dump")) {
