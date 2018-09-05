@@ -9,9 +9,9 @@ class MarkovChain {
 	public:
 		Graph graph;
 
-		void generate_from_file(string filename) {
+		void generate_from_file(char filename[]) {
 			std::ifstream infile;
-			infile.open(filename.c_str()); // Expects a char[]
+			infile.open(filename); // Expects a char[]
 			if (infile.is_open()) { // Error avoidance
 				string previous_word;
 				string word;

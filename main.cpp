@@ -3,9 +3,9 @@
 #include <string>
 
 int main() {
-	string filename;
+	char filename[257];
 	printf("Enter a filename to be converted to Markov Chain: ");
-	std::cin >> filename;
+	scanf("%256s", filename);
 
 	MarkovChain* file_chain = new MarkovChain;
 	(*file_chain).generate_from_file(filename);
