@@ -17,6 +17,16 @@ class Graph {
 			word_node->add(next_node);
 		}
 
+		Node* rand_node() {
+			int weight = this->nodes.size();
+			int end;
+			end = (RAND_MAX / weight) * weight;
+			int r;
+			((r = rand()) >= end);
+			int n = r % weight;
+			return nodes[n];
+		}
+
 		void print() {
 			unsigned int iter; // Iterative variable
 			for (iter = 0; iter < this->nodes.size(); iter++) {

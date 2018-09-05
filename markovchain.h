@@ -3,6 +3,9 @@
 
 #include "graph.h"
 #include <fstream>
+#include <string>
+#include <time.h>
+#include <stdlib.h>
 
 class MarkovChain {
 	public:
@@ -27,6 +30,19 @@ class MarkovChain {
 				printf("Error opening %s!\n", filename);
 				return 1;
 			}
+		}
+
+		string* read_n_words(int number) {
+			string* output;
+			output = new string[number];
+			srand(time(nullptr));
+			Node* current = this->graph.rand_node();
+			int iter;
+			for (iter = 0; iter < number; iter++) {
+				output[iter] = current->word;
+				current = current->get_next();
+			}
+			return output;
 		}
 
 		void print() {
