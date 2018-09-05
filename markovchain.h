@@ -35,10 +35,13 @@ class MarkovChain {
 		string* read_n_words(int number) {
 			string* output;
 			output = new string[number];
-			srand(time(nullptr));
+			srand(time(NULL));
 			Node* current = this->graph.rand_node();
 			int iter;
 			for (iter = 0; iter < number; iter++) {
+				if (current == NULL) {
+					break;
+				}
 				output[iter] = current->word;
 				current = current->get_next();
 			}

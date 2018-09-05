@@ -19,10 +19,13 @@ class Graph {
 
 		Node* rand_node() {
 			int weight = this->nodes.size();
+			if (weight == 0) {
+				return NULL;
+			}
 			int end;
 			end = (RAND_MAX / weight) * weight;
 			int r;
-			((r = rand()) >= end);
+			while ((r = rand()) >= end);
 			int n = r % weight;
 			return nodes[n];
 		}

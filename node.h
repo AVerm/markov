@@ -25,13 +25,16 @@ class Node {
 
 		Node* get_next() {
 			int weight = this->total_weight();
+			if (weight == 0) {
+				return NULL;
+			}
 			// Do some math to even out the probabilities
 			int end;
 			end = (RAND_MAX / weight) * weight;
 			int r;
 			((r = rand()) >= end);
 			int n = r % weight;
-			return get_node_n(n);
+			return get_node_n(n); // May be nullptr!!!
 
 		}
 
@@ -60,7 +63,7 @@ class Node {
 					return iter->first;
 				}
 			}
-			return nullptr;
+			return NULL;
 		}
 };
 
