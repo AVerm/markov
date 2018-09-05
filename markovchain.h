@@ -3,7 +3,6 @@
 
 #include "graph.h"
 #include <fstream>
-#include <string>
 
 class MarkovChain {
 	public:
@@ -25,7 +24,7 @@ class MarkovChain {
 				return 0;
 			}
 			else {
-				printf("Error opening file!\n");
+				printf("Error opening %s!\n", filename);
 				return 1;
 			}
 		}
@@ -33,7 +32,6 @@ class MarkovChain {
 		void print() {
 			this->graph.print();
 		}
-
 };
 
 #endif
