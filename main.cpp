@@ -40,10 +40,12 @@ int main(int argc, char* argv[]) {
 	int n;
 	n = 0;
 	int current_digit;
+	char current_char;
 	int digit;
 	for (digit = 0; argv[argc - 1][digit] != '\0'; digit++) {
 		n *= 10;
-		sscanf(argv[argc - 1] + digit, "%d", &current_digit);
+		current_char = argv[argc - 1][digit];
+		sscanf(&current_char, "%d", &current_digit);
 		n += current_digit;
 	}
 	string* output;
